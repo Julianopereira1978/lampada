@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acenda a Lâmpada HTML + JS</title>
+    <style>
+        
+        h1 {text-align: center;}
+        div {text-align: center;
+            margin-top: 200px;
+        }        
+
+    </style>
+    <script>
+        var quebrada = false;
+        function mudaLampada(tipo) {
+           
+            if (!quebrada){
+               document.getElementById("Luz").src= tipo+ ".jpg";           
+               if (tipo == 'lampada_quebrada'){
+                 quebrada = true;
+                 alert ("Não diga que não avisei!!!");
+                   
+               }
+            }
+                        
+        }
+                      
+</script>
+</head>
+<body>
+    <div>
+    <h1>Passe o Mouse sobre a Lâmpada</h1>
+    <h2>Mas evite clicar sobre ela...</h2>
+
+    <img src="lampada_apagada.jpg" id= "Luz" onmousemove="mudaLampada('lampada_acesa')" onmouseout="mudaLampada('lampada_apagada')" onclick="mudaLampada('lampada_quebrada')" />
+</div>
+
+</body>
+</html>
